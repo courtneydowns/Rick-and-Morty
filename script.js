@@ -5,6 +5,8 @@
 //         console.log(data);
 //         episodes = data;
 
+
+
 fetch('https://rickandmortyapi.com/api/location')
         .then(function (response) {
                 return response.json();
@@ -15,25 +17,21 @@ fetch('https://rickandmortyapi.com/api/location')
                 // console.log(location.results[0]);
                 for (i = 0; i < location.results.length; i++) {
                         let residents = location.results[i].residents
-                        // console.log(residents);
+                        //console.log(residents);
                     for (c = 0; c <residents.length; c++) {
                         // console.log(residents[c])
                         fetch(residents[c])
                             .then(function (response){
                             return response.json();
                             }).then(function (charInfo)  {
-                        //     let charName = document.createElement("p")
-                        //     charName.innerText = charInfo.name;
-                            locationSwitch(location, charInfo);
-                //      console.log(charInfo.image); 
-                //      console.log(charInfo.name);
-                //      console.log(charInfo.gender);
-                //      console.log(charInfo.species);
-                //      console.log(charInfo.status);                    
-                                
-                                
-                            
-                             
+                        // console.log(residents);
+                        locationSwitch(location, charInfo);
+                //      console.log(charInfo.image);
+                //      console.log(charInfo.status);
+                //         console.log(charInfo.name);
+                //         console.log(charInfo.species);
+                //              console.log(charInfo.gender);                   
+      
                         })
                     }
                   }
@@ -47,7 +45,9 @@ function locationSwitch(location, charInfo) {
                         case "location-one":
                                 console.log(location.results[0])
                                 let loc1 = location.results[0];
-                                displayResults(loc1);
+                                residents = charInfo;
+                                //console.log(residents, "Line 49");
+                                displayResults(loc1, residents);
                                 break;
 
                         case "location-two":
@@ -171,32 +171,90 @@ function locationSwitch(location, charInfo) {
         })
 }
 
-function displayResults(path) {
+function displayResults(path, residents) {
         //   console.log(path.name);
-
-
+        console.log(residents, "line 176");
         let results = document.getElementById("results");
 
         while (results.firstChild) {
                 results.removeChild(results.firstChild);
         }
-
-        let name = path.name;
-        let type = path.type
-        let dimension = path.dimension
-
+        
         let displayName = document.createElement("h2");
         let displayType = document.createElement("h2");
         let displayDimension = document.createElement("h2");
+        let displayImage = document.createElement("img");
+        let displayCharName = document.createElement("h1");
+        let displayStatus = document.createElement("h3");
+        let displaySpecies = document.createElement("h3");
+        let displayGender = document.createElement("h3");
 
+        let name = path.name;
+        let type = path.type;
+        let dimension = path.dimension;
+        let charName = residents.name;
+        let image = residents.image;
+        // console.log(image, "Line 188");
+        let status = residents.status;
+        let species = residents.species;
+        let gender = residents.gender;
+        
+        // for (let i = 0; i < residents.length; i++) {
+        //         console.log(residents[i])
+        //  }
+        
 
-        displayName.innerText = `Name: ${name}`;
+        displayName.innerHTML = `Name: ${name}`;
         displayType.innerHTML = `Type: ${type}`;
         displayDimension.innerHTML = `Dimension: ${dimension}`;
+        displayImage.src = image;
+        displayCharName.innerHTML = charName;
+        displayStatus.innerHTML = status;
+        displaySpecies.innerHTML = species;
+        displayGender.innerHTML = gender;
+
+        // create card
+        let card = document.createElement("div");
+        card.setAttribute("class", "card")
 
 
+        
+        // card body/content
+        let cardBody = document.createElement('div')
+        cardBody.setAttribute("class", "cardBody")
+        
+        // image in card
+        // let charImage = document.createElement('img')
+        // charImage.src = "your source"
+        // charImage.alt = "image alt"
+        // charImage.style.width = "100%"
+
+        // character name
+        // let charName = document.createElement('h1')
+        // charName.innerText = "character name goes here"
+        // charName.style.fontWeight = "600"
+
+        // appending
+        
+        
+        
         results.appendChild(displayName);
         results.appendChild(displayType);
         results.appendChild(displayDimension);
+        results.appendChild(displayImage);
+        results.appendChild(displayCharName);
+        results.appendChild(displayStatus);
+        results.appendChild(displaySpecies);
+        results.appendChild(displayGender);
+        
+        // append card
+        results.appendChild(card)
+        card.appendChild(cardBody)
+        cardBody.appendChild(displayImage);
+        cardBody.appendChild(displayCharName);
+        cardBody.appendChild(displayStatus);
+        cardBody.appendChild(displaySpecies);
+        results.appendChild(displayGender);
+        
 
 }
