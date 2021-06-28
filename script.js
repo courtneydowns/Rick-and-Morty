@@ -9,23 +9,27 @@ fetch('https://rickandmortyapi.com/api/location')
         .then(function (response) {
                 return response.json();
         }).then(function (location) {
-                locationSwitch(location)
+                // locationSwitch(location)
+                console.log(location.results)
                 // console.log(location.residents[0])
                 // console.log(location.results[0]);
-                    for (i = 0; i < location.results.length; i++) {
-                    console.log(location.results[i])
-                    let residents = location.results[i].residents
+                for (i = 0; i < location.results.length; i++) {
+                        let residents = location.results[i].residents
+                        // console.log(residents);
                     for (c = 0; c <residents.length; c++) {
                         // console.log(residents[c])
                         fetch(residents[c])
                             .then(function (response){
                             return response.json();
                             }).then(function (charInfo)  {
-                        console.log(charInfo.image); 
-                     console.log(charInfo.name);
-                     console.log(charInfo.gender);
-                     console.log(charInfo.species);
-                     console.log(charInfo.status);                    
+                        //     let charName = document.createElement("p")
+                        //     charName.innerText = charInfo.name;
+                            locationSwitch(location, charInfo);
+                //      console.log(charInfo.image); 
+                //      console.log(charInfo.name);
+                //      console.log(charInfo.gender);
+                //      console.log(charInfo.species);
+                //      console.log(charInfo.status);                    
                                 
                                 
                             
@@ -35,7 +39,7 @@ fetch('https://rickandmortyapi.com/api/location')
                   }
         })
 
-function locationSwitch(location) {
+function locationSwitch(location, charInfo) {
         let submit = document.getElementById("submit")
         submit.addEventListener("click", () => {
                 let option = document.getElementById("location").value
