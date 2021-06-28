@@ -1,0 +1,28 @@
+@font-face {
+	font-family: getSchwifty;
+	src: url(./assets/getSchwifty.ttf);
+}
+
+body {
+	background-image: url('./assets/85327.png');
+	width: auto;
+	height: auto;
+}
+
+label {
+	color: white;
+	font-family: getSchwifty;
+	font-size: 32px;
+}
+
+button {
+	background-color: #b1eaf9;
+	font-family: getSchwifty;
+	color: 
+	#272c3a;
+	height: 30px;
+}
+
+option {
+	font-family: getSchwifty;
+}
