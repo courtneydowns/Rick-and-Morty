@@ -7,12 +7,23 @@ body {
 	background-image: url('./assets/85327.png');
 	width: auto;
 	height: auto;
+	padding: 40px;
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+#background-image {
+	height: 140px;
 }
 
 label {
 	color: white;
 	font-family: getSchwifty;
-	font-size: 32px;
+	font-size: 38px;
 }
 
 button {
@@ -20,9 +31,22 @@ button {
 	font-family: getSchwifty;
 	color: 
 	#272c3a;
-	height: 30px;
+	height: 50px;
+	font-size: 18px;
 }
 
 option {
 	font-family: getSchwifty;
+}
+
+#location {
+	font-family: getSchwifty;
+	height: 50px;
+	font-size: 24px;
+}
+
+h2 {
+	font-family: getSchwifty;
+	color: white;
+	font-size: 30px;
 }
