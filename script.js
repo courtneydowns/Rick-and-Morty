@@ -5,224 +5,231 @@
 //         console.log(data);
 //         episodes = data;
 
-
+let fetchResults = [];
 
 fetch('https://rickandmortyapi.com/api/location')
         .then(function (response) {
                 return response.json();
         }).then(function (location) {
-                // locationSwitch(location)
-                console.log(location.results)
-                // console.log(location.residents[0])
-                // console.log(location.results[0]);
-                for (i = 0; i < location.results.length; i++) {
-                        let residents = location.results[i].residents
-                        //console.log(residents);
-                    for (c = 0; c <residents.length; c++) {
-                        // console.log(residents[c])
-                        fetch(residents[c])
-                            .then(function (response){
-                            return response.json();
-                            }).then(function (charInfo)  {
-                        // console.log(residents);
-                        locationSwitch(location, charInfo);
-                //      console.log(charInfo.image);
-                //      console.log(charInfo.status);
-                //         console.log(charInfo.name);
-                //         console.log(charInfo.species);
-                //              console.log(charInfo.gender);                   
-      
-                        })
-                    }
-                  }
+                fetchResults = (location.results)
+                displayResults();
         })
 
-function locationSwitch(location, charInfo) {
-        let submit = document.getElementById("submit")
-        submit.addEventListener("click", () => {
-                let option = document.getElementById("location").value
-                switch (option) {
-                        case "location-one":
-                                console.log(location.results[0])
-                                let loc1 = location.results[0];
-                                residents = charInfo;
-                                //console.log(residents, "Line 49");
-                                displayResults(loc1, residents);
-                                break;
 
-                        case "location-two":
-                                console.log(location.results[1])
-                                let loc2 = location.results[1];
-                                displayResults(loc2);
-                                break;
 
-                        case "location-three":
-                                console.log(location.results[2])
-                                let loc3 = location.results[2];
-                                displayResults(loc3);
-                                break;
+let submit = document.getElementById("submit")
+submit.addEventListener("click", () => {
+        let option = document.getElementById("location").value
+        switch (option) {
+                case "location-one":
+                        //console.log(residents, "Line 49");
+                        displayResults(0);
+                        break;
 
-                        case "location-four":
-                                console.log(location.results[3])
-                                let loc4 = location.results[3];
-                                displayResults(loc4);
-                                break;
 
-                        case "location-five":
-                                console.log(location.results[4])
-                                let loc5 = location.results[4];
-                                displayResults(loc5);
-                                break;
+                case "location-two":
+                        displayResults(1)
+                        break;
 
-                        case "location-six":
-                                console.log(location.results[5])
-                                let loc6 = location.results[5];
-                                displayResults(loc6);
-                                break;
+                case "location-three":
+                        displayResults(2)
+                        break;
 
-                        case "location-seven":
-                                console.log(location.results[6])
-                                let loc7 = location.results[6];
-                                displayResults(loc7);
-                                break;
+                case "location-four":
+                        displayResults(3)
+                        break;
 
-                        case "location-eight":
-                                console.log(location.results[7])
-                                let loc8 = location.results[7];
-                                displayResults(loc8);
-                                break;
+                case "location-five":
+                        displayResults(4)
+                        break;
 
-                        case "location-nine":
-                                console.log(location.results[8])
-                                let loc9 = location.results[8];
-                                displayResults(loc9);
-                                break;
+                case "location-six":
+                        displayResults(5)
+                        break;
 
-                        case "location-ten":
-                                console.log(location.results[9])
-                                let loc10 = location.results[9];
-                                displayResults(loc10);
-                                break;
+                case "location-seven":
+                        displayResults(6)
+                        break;
 
-                        case "location-eleven":
-                                console.log(location.results[10])
-                                let loc11 = location.results[10];
-                                displayResults(loc11);
-                                break;
+                case "location-eight":
+                        displayResults(7)
+                        break;
 
-                        case "location-twelve":
-                                console.log(location.results[11])
-                                let loc12 = location.results[11];
-                                displayResults(loc12);
-                                break;
+                case "location-nine":
+                        displayResults(8)
+                        break;
 
-                        case "location-thirteen":
-                                console.log(location.results[12])
-                                let loc13 = location.results[12];
-                                displayResults(loc13);
-                                break;
+                case "location-ten":
+                        displayResults(9)
+                        break;
 
-                        case "location-fourteen":
-                                console.log(location.results[13])
-                                let loc14 = location.results[13];
-                                displayResults(loc14);
-                                break;
+                case "location-eleven":
+                        displayResults(10)
+                        break;
 
-                        case "location-fifteen":
-                                console.log(location.results[14])
-                                let loc15 = location.results[14];
-                                displayResults(loc15);
-                                break;
+                case "location-twelve":
+                        displayResults(11)
+                        break;
 
-                        case "location-sixteen":
-                                console.log(location.results[15])
-                                let loc16 = location.results[15];
-                                displayResults(loc16);
-                                break;
+                case "location-thirteen":
+                        displayResults(12)
+                        break;
 
-                        case "location-seventeen":
-                                console.log(location.results[16])
-                                let loc17 = location.results[16];
-                                displayResults(loc17);
-                                break;
+                case "location-fourteen":
+                        displayResults(13)
+                        break;
 
-                        case "location-eighteen":
-                                console.log(location.results[17])
-                                let loc18 = location.results[17];
-                                displayResults(loc18);
-                                break;
+                case "location-fifteen":
+                        displayResults(14)
+                        break;
 
-                        case "location-nineteen":
-                                console.log(location.results[18])
-                                let loc19 = location.results[18];
-                                displayResults(loc19);
-                                break;
+                case "location-sixteen":
+                        displayResults(15)
+                        break;
 
-                        case "location-twenty":
-                                console.log(location.results[19])
-                                let loc20 = location.results[19];
-                                displayResults(loc20);
-                                break;
+                case "location-seventeen":
+                        displayResults(16)
+                        break;
 
-                        default:
-                                console.log("oops, broh")
-                                break;
-                }
-        })
-}
+                case "location-eighteen":
+                        displayResults(17)
+                        break;
 
-function displayResults(path, residents) {
+                case "location-nineteen":
+                        displayResults(18)
+                        break;
+
+                case "location-twenty":
+                        displayResults(19)
+                        break;
+
+                default:
+                        console.log("oops, broh")
+                        break;
+        }
+})
+
+async function displayResults(arrayBucket = 0) {
         //   console.log(path.name);
-        console.log(residents, "line 176");
+        // console.log(residents);
         let results = document.getElementById("results");
 
         while (results.firstChild) {
                 results.removeChild(results.firstChild);
         }
-        
+
+
+
+
+        // let displayImage = document.createElement("img");
+        // let displayCharName = document.createElement("h1");
+        // let displayStatus = document.createElement("h3");
+        // let displaySpecies = document.createElement("h3");
+        // let displayGender = document.createElement("h3");
+
+
+
+        // let image = residents[i].image;
+        // let charName = residents[i].name;
+        // let status = residents[i].status;
+        // let species = residents[i].species;
+        // let gender = residents[i].gender;
+
+
+
+
+        let residents = fetchResults[arrayBucket].residents
+        let name = fetchResults[arrayBucket].name
+        let type = fetchResults[arrayBucket].type
+        let dimension = fetchResults[arrayBucket].dimension
         let displayName = document.createElement("h2");
         let displayType = document.createElement("h2");
         let displayDimension = document.createElement("h2");
-        let displayImage = document.createElement("img");
-        let displayCharName = document.createElement("h1");
-        let displayStatus = document.createElement("h3");
-        let displaySpecies = document.createElement("h3");
-        let displayGender = document.createElement("h3");
-
-        let name = path.name;
-        let type = path.type;
-        let dimension = path.dimension;
-        let charName = residents.name;
-        let image = residents.image;
-        // console.log(image, "Line 188");
-        let status = residents.status;
-        let species = residents.species;
-        let gender = residents.gender;
-        
-        // for (let i = 0; i < residents.length; i++) {
-        //         console.log(residents[i])
-        //  }
-        
 
         displayName.innerHTML = `Name: ${name}`;
         displayType.innerHTML = `Type: ${type}`;
         displayDimension.innerHTML = `Dimension: ${dimension}`;
-        displayImage.src = image;
-        displayCharName.innerHTML = charName;
-        displayStatus.innerHTML = status;
-        displaySpecies.innerHTML = species;
-        displayGender.innerHTML = gender;
+
+
+        results.appendChild(displayName);
+        results.appendChild(displayType);
+        results.appendChild(displayDimension);
+
+        for (let i = 0; i < residents.length; i++) {
+                let imageFetch = await fetch(residents[i]);
+                let resultImageFetch = await imageFetch.json()
+
+                let image = resultImageFetch.image;
+                let charName = resultImageFetch.name;
+                let status = resultImageFetch.status;
+                let species = resultImageFetch.species;
+                let gender = resultImageFetch.gender;
+
+                let displayImage = document.createElement("img");
+                let displayCharName = document.createElement("h1");
+                displayCharName.setAttribute("class", "charName");
+                let displayStatus = document.createElement("h3");
+                displayStatus.setAttribute("class", "description");
+                let displaySpecies = document.createElement("h3");
+                displaySpecies.setAttribute("class", "description")
+                let displayGender = document.createElement("h3");
+                displayGender.setAttribute("class", "description");
+
+                displayImage.src = image;
+                displayCharName.innerHTML = `Name: ${charName}`;
+                displayStatus.innerHTML = `Status: ${status}`;
+                displaySpecies.innerHTML = `Species: ${species}`;
+                displayGender.innerHTML = `Gender: ${gender}`;
+
+                let card = document.createElement("div");
+                card.setAttribute("class", "card");
+
+                let cardBody = document.createElement('div')
+                cardBody.setAttribute("class", "cardBody")
+
+
+                // displayCharName.innerHTML = charName;
+                // displayStatus.innerHTML = status;
+                // displaySpecies.innerHTML = species;
+                // displayGender.innerHTML = gender;
+
+                results.appendChild(card);
+                card.appendChild(cardBody);
+                cardBody.appendChild(displayImage);
+                cardBody.appendChild(displayCharName);
+                cardBody.appendChild(displayStatus);
+                cardBody.appendChild(displaySpecies);
+                cardBody.appendChild(displayGender);
+
+                // results.appendChild(displayImage);
+                // results.appendChild(displayCharName);
+                // results.appendChild(displayStatus);
+                // results.appendChild(displaySpecies);
+                // results.appendChild(displayGender);
+
+
+                // console.log(residents [i], i);
+        }
+
+
+
+
+
+
+        // displayImage.src = image;
+        // displayCharName.innerHTML = charName;
+        // displayStatus.innerHTML = status;
+        // displaySpecies.innerHTML = species;
+        // displayGender.innerHTML = gender;
 
         // create card
-        let card = document.createElement("div");
-        card.setAttribute("class", "card")
+        // let card = document.createElement("div");
+        // card.setAttribute("class", "card")
 
-
-        
         // card body/content
-        let cardBody = document.createElement('div')
-        cardBody.setAttribute("class", "cardBody")
-        
+        // let cardBody = document.createElement('div')
+        // cardBody.setAttribute("class", "cardBody")
+
         // image in card
         // let charImage = document.createElement('img')
         // charImage.src = "your source"
@@ -235,26 +242,26 @@ function displayResults(path, residents) {
         // charName.style.fontWeight = "600"
 
         // appending
-        
-        
-        
-        results.appendChild(displayName);
-        results.appendChild(displayType);
-        results.appendChild(displayDimension);
-        results.appendChild(displayImage);
-        results.appendChild(displayCharName);
-        results.appendChild(displayStatus);
-        results.appendChild(displaySpecies);
-        results.appendChild(displayGender);
-        
+
+
+
+        // results.appendChild(displayName);
+        // results.appendChild(displayType);
+        // results.appendChild(displayDimension);
+        // results.appendChild(displayImage);
+        // results.appendChild(displayCharName);
+        // results.appendChild(displayStatus);
+        // results.appendChild(displaySpecies);
+        // results.appendChild(displayGender);
+
         // append card
-        results.appendChild(card)
-        card.appendChild(cardBody)
-        cardBody.appendChild(displayImage);
-        cardBody.appendChild(displayCharName);
-        cardBody.appendChild(displayStatus);
-        cardBody.appendChild(displaySpecies);
-        results.appendChild(displayGender);
-        
+        // results.appendChild(card)
+        // card.appendChild(cardBody)
+        // cardBody.appendChild(displayImage);
+        // cardBody.appendChild(displayCharName);
+        // cardBody.appendChild(displayStatus);
+        // cardBody.appendChild(displaySpecies);
+        // cardBody.appendChild(displayGender);
+
 
 }
