@@ -154,6 +154,9 @@ async function displayResults(arrayBucket = 0) {
         results.appendChild(displayName);
         results.appendChild(displayType);
         results.appendChild(displayDimension);
+        let residentsHeader = document.createElement("p")
+        residentsHeader.innerText = "Residents:";
+        results.appendChild(residentsHeader);
 
         for (let i = 0; i < residents.length; i++) {
                 let imageFetch = await fetch(residents[i]);

@@ -49,6 +49,14 @@ option {
 	font-size: 24px;
 }
 
+p {
+	font-family: getSchwifty;
+	height: 50px;
+	font-size: 30px;
+	color: white;
+	padding-top: 60px;
+}
+
 h2 {
 	font-family: getSchwifty;
 	color: white;
@@ -86,7 +94,7 @@ h2 {
 	background-color: white; 
 	width: 700px;
 	height: 300px;
-	margin-top: 75px;
+	margin-top: 45px;
 	margin-bottom: 75px;
 	justify-content: left;
 
