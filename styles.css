@@ -5,7 +5,10 @@
 
 body {
 	background-image: url('./assets/85327.png');
-	background-size: contain;
+	background-size: cover;
+	background-position: bottom right;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
 	padding: 5px;
 }
 
@@ -16,8 +19,13 @@ body {
 	align-items: center;
 }
 
+/* .logo {
+	margin-bottom: 5px;
+} */
+
 #background-image {
 	height: 140px;
+	margin-bottom: 4em;
 }
 
 .drop-down {
