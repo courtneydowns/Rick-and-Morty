@@ -100,7 +100,7 @@ h4 {
 }
 
 /* for mobile */
-@media screen and (min-width: 400px) {
+@media screen and (max-width: 420px) {
   .container {
     display: flex;
     flex-direction: column-reverse;
