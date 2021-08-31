@@ -14,7 +14,6 @@ submit.addEventListener("click", () => {
   let option = document.getElementById("location").value;
   switch (option) {
     case "location-one":
-      //console.log(residents, "Line 49");
       displayResults(0);
       break;
 
@@ -101,8 +100,6 @@ submit.addEventListener("click", () => {
 });
 
 async function displayResults(arrayBucket = 0) {
-  //   console.log(path.name);
-  // console.log(residents);
   let results = document.getElementById("results");
 
   while (results.firstChild) {
@@ -156,82 +153,7 @@ async function displayResults(arrayBucket = 0) {
   </div>
 </div>`;
 
-    // card.innerHTML = `<div class="row g-0">
-    //     <div class="col-md-4">
-    //       <img src="${image}" class="img-fluid rounded-start" alt="${charName}" />
-    //     </div>
-    //     <div class="col-md-8">
-    //       <div class="card-body">
-    //         <h5 class="card-title">${charName}</h5>
-    //         <div class="card-text">
-    //           <p>Status: ${status}</p>
-    //           <p>Species: ${species}</p>
-    //           <p>Gender: ${gender}</p>
-    //           <p>Origin: ${origin}</p>
-    //           <p>Last known location: ${location}</p>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>`;
-
     results.appendChild(card);
-
-    // let displayImage = document.createElement("img");
-    // let displayCharName = document.createElement("h1");
-    // displayCharName.setAttribute("class", "charName");
-    // let displayStatus = document.createElement("h3");
-    // displayStatus.setAttribute("class", "description");
-    // let displaySpecies = document.createElement("h3");
-    // displaySpecies.setAttribute("class", "description");
-    // let displayGender = document.createElement("h3");
-    // displayGender.setAttribute("class", "description");
-
-    // let image = document.createElement("img");
-    // let charName = document.createElement("h1");
-    // let status = document.createElement("h3");
-    // let species = document.createElement("h3");
-    // let type = document.createElement("h3");
-    // let gender = document.createElement("h3");
-    // let origin = document.createElement("h3");
-    // let location = document.createElement("h3");
-
-    // image.src = image;
-    // charName.innerHTML = `Name: ${charName}`;
-    // status.innerHTML = `Status: ${status}`;
-    // species.innerHTML = `Species: ${species}`;
-    // type.innerHTML = `Subspecies: ${type}`;
-    // gender.innerHTML = `Gender: ${gender}`;
-    // origin.innerHTML = `Origin: ${origin}`;
-    // location.innerHTML = `Last Known Location: ${location}`;
-    // displayStatus.setAttribute("class", "description");
-    // displaySpecies.setAttribute("class", "description");
-    // let gender = document.createElement("h3");
-    // displayGender.setAttribute("class", "description");
-
-    // displayImage.src = image;
-    // displayCharName.innerHTML = `Name: ${charName}`;
-    // displayStatus.innerHTML = `Status: ${status}`;
-    // displaySpecies.innerHTML = `Species: ${species}`;
-    // displayGender.innerHTML = `Gender: ${gender}`;
-
-    // let card = document.createElement("div");
-    // card.setAttribute("class", "card");
-
-    // let cardBody = document.createElement("div");
-    // cardBody.setAttribute("class", "cardBody");
-
-    // displayCharName.innerHTML = charName;
-    // displayStatus.innerHTML = status;
-    // displaySpecies.innerHTML = species;
-    // displayGender.innerHTML = gender;
-
-    // card.appendChild(cardBody);
-    // cardBody.appendChild(displayImage);
-    // cardBody.appendChild(displayCharName);
-    // cardBody.appendChild(displayStatus);
-    // cardBody.appendChild(displaySpecies);
-    // cardBody.appendChild(displayGender);
-
     console.log(residents);
   }
 }
