@@ -4,7 +4,7 @@
 }
 
 body {
-  background-image: url("./assets/85327.png");
+  background-image: url('./assets/85327.png');
   background-size: cover;
   background-position: bottom right;
   background-attachment: fixed;
@@ -40,7 +40,6 @@ label {
   color: white;
   font-family: getSchwifty;
   font-size: 42px;
-  text-shadow: 0 2px 2px black;
 }
 
 button {
@@ -59,10 +58,6 @@ option {
   font-family: getSchwifty;
   height: 50px;
   font-size: 24px;
-}
-
-#results {
-  text-shadow: 0 2px 2px black;
 }
 
 p {
@@ -100,7 +95,7 @@ h4 {
 }
 
 /* for mobile */
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 545px) {
   .container {
     display: flex;
     flex-direction: column-reverse;
@@ -111,12 +106,12 @@ h4 {
     margin-bottom: 24px;
   }
 
-  .container label[for="location"] {
-    margin-bottom: 32px;
-  }
-
   .drop-down {
     display: flex;
+  }
+
+  label[for='location'] {
+    margin-bottom: 32px;
   }
 
   #location {
@@ -125,5 +120,11 @@ h4 {
 
   #submit {
     font-size: 16px;
+  }
+
+  label[for='location'],
+  #results h2,
+  #results h4 {
+    text-shadow: 0 1px 1px black, 0 2px 2px black, 0 0 8px white;
   }
 }
