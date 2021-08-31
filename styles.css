@@ -27,10 +27,6 @@ h5 {
   align-items: center;
 }
 
-/* .logo {
-	margin-bottom: 5px;
-} */
-
 #background-image {
   height: 140px;
   margin-bottom: 4em;
@@ -66,10 +62,8 @@ option {
 
 p {
   font-family: getSchwifty;
-  /* height: 50px; */
   font-size: 20px;
   color: black;
-  /* padding-top: 60px; */
 }
 
 h2 {
@@ -94,26 +88,8 @@ h4 {
   position: relative;
   z-index: 100;
   margin-top: -250px;
-  /* padding-bottom: 500px; */
-  /* margin-top: 100px;
-	font-display: block;  */
 }
 
 .card {
   margin-bottom: 50px;
 }
-
-/* .description {
-  font-family: getSchwifty;
-  color: black;
-  font-size: 22px;
-  position: relative;
-  z-index: 100;
-  padding-left: 325px; */
-/* padding-left: 325px;
-	padding-bottom: 200px; */
-
-/* .h1 {
-	color: white;
-	padding-top: 200px;
-} */
