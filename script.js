@@ -155,6 +155,5 @@ async function displayResults(arrayBucket = 0) {
 </div>`;
 
     results.appendChild(card);
-    console.log(residents);
   }
 }

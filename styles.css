@@ -68,7 +68,7 @@ p {
 h2 {
   font-family: getSchwifty;
   color: white;
-  font-size: 50px;
+  font-size: 45px;
   margin-top: 50px;
   margin-bottom: 75px;
   position: relative;
@@ -81,7 +81,7 @@ h4 {
   margin-bottom: -50px;
   padding-bottom: 100px;
   text-align: center;
-  font-size: 50px;
+  font-size: 35px;
   position: relative;
   margin-top: 100px;
 }
@@ -100,6 +100,8 @@ h4 {
   top: 0;
   right: 0;
   position: absolute;
+  padding-top: 20px;
+  padding-right: 30px;
 }
 
 .card {
