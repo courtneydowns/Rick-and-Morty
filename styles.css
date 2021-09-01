@@ -5,10 +5,6 @@
 
 body {
   background-image: url("./assets/GalaxyWallpaper2.jpg");
-  background-size: cover;
-  background-position: bottom right;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   overflow-x: hidden;
   max-width: 100%;
   padding: 5px;
@@ -21,28 +17,32 @@ h5 {
 }
 
 .container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  margin-top: 100px;
+  padding: 80px;
 }
 
-#logo {
+#background-image {
   height: 140px;
   margin-bottom: 4em;
-  top: 0px;
-  right: 0px;
-  position: absolute;
 }
 
 .drop-down {
-  margin-top: -30px;
+  margin-top: -85px;
+  position: relative;
 }
 
-label {
+#location {
+  font-family: getSchwifty;
+  height: 50px;
+  position: absolute;
+  right: 30%;
+  left: 30%;
+}
+
+label[for="location"] {
   color: white;
   font-family: getSchwifty;
-  font-size: 42px;
+  font-size: 50px;
 }
 
 button {
@@ -51,16 +51,12 @@ button {
   color: #272c3a;
   height: 50px;
   font-size: 18px;
+  left: 68%;
+  position: relative;
 }
 
 option {
   font-family: getSchwifty;
-}
-
-#location {
-  font-family: getSchwifty;
-  height: 50px;
-  font-size: 24px;
 }
 
 p {
@@ -72,15 +68,22 @@ p {
 h2 {
   font-family: getSchwifty;
   color: white;
-  font-size: 30px;
+  font-size: 50px;
   margin-top: 50px;
   margin-bottom: 75px;
+  position: relative;
+  text-align: center;
 }
 
 h4 {
   font-family: getSchwifty;
   color: white;
-  padding-bottom: 30px;
+  margin-bottom: -50px;
+  padding-bottom: 100px;
+  text-align: center;
+  font-size: 50px;
+  position: relative;
+  margin-top: 100px;
 }
 
 .charName {
@@ -93,6 +96,49 @@ h4 {
   margin-top: -250px;
 }
 
+.logo {
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+
 .card {
   margin-bottom: 50px;
+}
+
+/* for mobile */
+@media screen and (max-width: 545px) {
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 25vh;
+  }
+
+  .container #background-image {
+    margin-bottom: 24px;
+  }
+
+  .drop-down {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  label[for="location"] {
+    margin-bottom: 32px;
+  }
+
+  #location {
+    width: 100%;
+  }
+
+  #submit {
+    font-size: 16px;
+  }
+
+  label[for="location"],
+  #results h2,
+  #results h4 {
+    text-shadow: 0 1px 1px black, 0 2px 2px black, 0 0 8px white;
+  }
 }
