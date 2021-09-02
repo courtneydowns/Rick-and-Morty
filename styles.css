@@ -5,54 +5,61 @@
 
 body {
   background-image: url("./assets/GalaxyWallpaper2.jpg");
-  overflow-x: hidden;
   max-width: 100%;
-  padding: 5px;
+  padding: 0.2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 h5 {
   font-family: getSchwifty;
   color: black;
-  font-size: 30px;
+  font-size: 2rem;
 }
 
 .container {
-  margin-top: 100px;
-  padding: 80px;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  margin-top: 10rem;
+  height: 8rem;
+  justify-content: center;
+  align-items: center;
 }
 
 #background-image {
-  height: 140px;
-  margin-bottom: 4em;
+  height: 8.75rem;
+  margin-bottom: 4rem;
 }
 
 .drop-down {
-  margin-top: -78px;
-  position: relative;
+  align-items: center;
+  height: 8vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 #location {
   font-family: getSchwifty;
-  height: 50px;
-  position: absolute;
-  right: 30%;
-  left: 30%;
+  height: 3.125rem;
 }
 
 label[for="location"] {
   color: white;
   font-family: getSchwifty;
-  font-size: 50px;
+  font-size: 3.125rem;
 }
 
 button {
   background-color: #b1eaf9;
   font-family: getSchwifty;
   color: #272c3a;
-  height: 50px;
-  font-size: 18px;
-  left: 68%;
-  position: absolute;
+  height: 3.25rem;
+  font-size: 1.25rem;
 }
 
 option {
@@ -61,17 +68,16 @@ option {
 
 p {
   font-family: getSchwifty;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: black;
 }
 
 h2 {
   font-family: getSchwifty;
   color: white;
-  font-size: 40px;
-  margin-top: 50px;
-  padding-top: 20px;
-  margin-bottom: 75px;
+  font-size: 2.5rem;
+  margin-top: 3.5rem;
+  padding-top: 2rem;
   position: relative;
   text-align: center;
 }
@@ -79,34 +85,34 @@ h2 {
 h4 {
   font-family: getSchwifty;
   color: white;
-  margin-bottom: -50px;
-  padding-bottom: 80px;
+  margin-bottom: -3.125rem;
+  padding-bottom: 5rem;
   text-align: center;
-  font-size: 30px;
+  font-size: 1.875rem;
   position: relative;
-  margin-top: 100px;
+  margin-top: 4rem;
 }
 
 .charName {
   font-family: getSchwifty;
-  font-size: 30px;
+  font-size: 1.875rem;
   color: white;
-  padding-left: 325px;
+  padding-left: 20.3125rem;
   position: relative;
   z-index: 100;
-  margin-top: -250px;
+  margin-top: -15.625px;
 }
 
 .logo {
   top: 0;
   right: 0;
   position: absolute;
-  padding-top: 20px;
-  padding-right: 30px;
+  padding-top: 1.25rem;
+  padding-right: 1.875rem;
 }
 
 .card {
-  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
 }
 
 /* for mobile */
