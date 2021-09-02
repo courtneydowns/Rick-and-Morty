@@ -1,3 +1,4 @@
+//
 let fetchResults = [];
 
 fetch("https://rickandmortyapi.com/api/location")
@@ -141,7 +142,7 @@ async function displayResults(arrayBucket = 0) {
 
     const card = document.createElement("div");
 
-    card.innerHTML = `<div class="card" style="width: 18rem;">
+    card.innerHTML = `<div class="card mx-auto text-center" style="width: 30rem;">
   <img src="${image}" class="card-img-top" alt="${charName}">
   <div class="card-body">
     <h5 class="card-title"${charName}></h5>
@@ -154,6 +155,5 @@ async function displayResults(arrayBucket = 0) {
 </div>`;
 
     results.appendChild(card);
-    console.log(residents);
   }
 }

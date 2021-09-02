@@ -4,94 +4,152 @@
 }
 
 body {
-  background-image: url('./assets/85327.png');
-  background-size: cover;
-  background-position: bottom right;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  overflow-x: hidden;
+  background-image: url("./assets/GalaxyWallpaper2.jpg");
   max-width: 100%;
-  padding: 5px;
+  padding: 0.2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 h5 {
   font-family: getSchwifty;
   color: black;
-  font-size: 30px;
+  font-size: 2rem;
 }
 
 .container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  width: 100vw;
+  margin-top: 10rem;
+  height: 8rem;
+  justify-content: center;
   align-items: center;
 }
 
 #background-image {
-  height: 140px;
-  margin-bottom: 4em;
+  height: 8.75rem;
+  margin-bottom: 4rem;
 }
 
 .drop-down {
-  margin-top: -30px;
+  align-items: center;
+  height: 8vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-label {
+#location {
+  font-family: getSchwifty;
+  height: 3.125rem;
+}
+
+label[for="location"] {
   color: white;
   font-family: getSchwifty;
-  font-size: 42px;
+  font-size: 3.125rem;
 }
 
 button {
   background-color: #b1eaf9;
   font-family: getSchwifty;
   color: #272c3a;
-  height: 50px;
-  font-size: 18px;
+  height: 3.25rem;
+  font-size: 1.25rem;
 }
 
 option {
   font-family: getSchwifty;
 }
 
-#location {
-  font-family: getSchwifty;
-  height: 50px;
-  font-size: 24px;
-}
-
 p {
   font-family: getSchwifty;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: black;
 }
 
 h2 {
   font-family: getSchwifty;
   color: white;
-  font-size: 30px;
-  margin-top: 50px;
-  margin-bottom: 75px;
+  font-size: 2.5rem;
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  position: relative;
+  text-align: center;
 }
 
 h4 {
   font-family: getSchwifty;
   color: white;
-  padding-bottom: 30px;
+  margin-bottom: -3.125rem;
+  padding-bottom: 5rem;
+  text-align: center;
+  font-size: 1.875rem;
+  position: relative;
+  margin-top: 4rem;
 }
 
 .charName {
   font-family: getSchwifty;
-  font-size: 30px;
+  font-size: 1.875rem;
   color: white;
-  padding-left: 325px;
+  padding-left: 20.3125rem;
   position: relative;
   z-index: 100;
-  margin-top: -250px;
+  margin-top: -15.625px;
+}
+
+.logo {
+  top: 0;
+  right: 0;
+  position: absolute;
+  padding-top: 1.25rem;
+  padding-right: 1.875rem;
 }
 
 .card {
-  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
+}
+
+/* for mobile */
+@media screen and (max-width: 545px) {
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 25vh;
+  }
+
+  .container #background-image {
+    margin-bottom: 24px;
+  }
+
+  .drop-down {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  label[for="location"] {
+    margin-bottom: 32px;
+  }
+
+  #location {
+    width: 100%;
+  }
+
+  #submit {
+    font-size: 16px;
+  }
+
+  label[for="location"],
+  #results h2,
+  #results h4 {
+    text-shadow: 0 1px 1px black, 0 2px 2px black, 0 0 8px white;
+  }
 }
 
 /* for mobile */
