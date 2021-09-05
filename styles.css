@@ -4,7 +4,7 @@
 }
 
 body {
-  background-image: url('./assets/GalaxyWallpaper2.jpg');
+  background-image: url("./assets/GalaxyWallpaper2.jpg");
   max-width: 100%;
   padding: 0.2rem;
 }
@@ -52,7 +52,7 @@ h5 {
   height: 3.125rem;
 }
 
-label[for='location'] {
+label[for="location"] {
   color: white;
   font-family: getSchwifty;
   font-size: 3.125rem;
@@ -120,7 +120,7 @@ h4 {
 }
 
 /* for mobile */
-@media screen and (max-width: 545px) {
+@media screen and (max-width: 1025px) {
   body {
     padding: 0;
   }
