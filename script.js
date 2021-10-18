@@ -10,8 +10,7 @@ fetch("https://rickandmortyapi.com/api/location")
     displayResults();
   });
 
-let submit = document.getElementById("submit");
-submit.addEventListener("click", () => {
+const handleSubmit = () => {
   let option = document.getElementById("location").value;
   switch (option) {
     case "location-one":
@@ -98,7 +97,13 @@ submit.addEventListener("click", () => {
       console.log("oops, broh");
       break;
   }
-});
+};
+
+let submit = document.getElementById("submit");
+let mobileSubmit = document.getElementById("mobile-submit");
+
+submit.addEventListener("click", handleSubmit);
+mobileSubmit.addEventListener("click", handleSubmit);
 
 async function displayResults(arrayBucket = 0) {
   let results = document.getElementById("results");
