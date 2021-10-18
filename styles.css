@@ -47,10 +47,6 @@ h5 {
   justify-content: center;
 }
 
-.card-img-top {
-  width: 18rem;
-}
-
 #location {
   font-family: getSchwifty;
   height: 3.125rem;

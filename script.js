@@ -14,7 +14,6 @@ submit.addEventListener("click", () => {
   let option = document.getElementById("location").value;
   switch (option) {
     case "location-one":
-      //console.log(residents, "Line 49");
       displayResults(0);
       break;
 
@@ -101,8 +100,6 @@ submit.addEventListener("click", () => {
 });
 
 async function displayResults(arrayBucket = 0) {
-  //   console.log(path.name);
-  // console.log(residents);
   let results = document.getElementById("results");
 
   while (results.firstChild) {
@@ -124,7 +121,8 @@ async function displayResults(arrayBucket = 0) {
   results.appendChild(displayName);
   results.appendChild(displayType);
   results.appendChild(displayDimension);
-  let residentsHeader = document.createElement("p");
+
+  let residentsHeader = document.createElement("h4");
   residentsHeader.innerHTML = "Residents:";
   results.appendChild(residentsHeader);
 
@@ -137,98 +135,63 @@ async function displayResults(arrayBucket = 0) {
     let status = resultImageFetch.status;
     let species = resultImageFetch.species;
     let gender = resultImageFetch.gender;
+    let origin = resultImageFetch.origin.name;
+    let location = resultImageFetch.location.name;
+    let dimension = resultImageFetch.dimension;
 
-    let displayImage = document.createElement("img");
-    let displayCharName = document.createElement("h1");
-    displayCharName.setAttribute("class", "charName");
-    let displayStatus = document.createElement("h3");
-    displayStatus.setAttribute("class", "description");
-    let displaySpecies = document.createElement("h3");
-    displaySpecies.setAttribute("class", "description");
-    let displayGender = document.createElement("h3");
-    displayGender.setAttribute("class", "description");
+    const card = document.createElement("div");
 
-    displayImage.src = image;
-    displayCharName.innerHTML = `Name: ${charName}`;
-    displayStatus.innerHTML = `Status: ${status}`;
-    displaySpecies.innerHTML = `Species: ${species}`;
-    displayGender.innerHTML = `Gender: ${gender}`;
+    card.innerHTML = `<div class="card mx-auto text-center" style="width: 30rem;">
+  <img src="${image}" class="card-img-top" alt="${charName}">
+  <div class="card-body">
+    <h5 class="card-title"${charName}></h5>
+    <p class="card-text">Status: ${status}</p>
+    <p class="card-text">Species: ${species}</p>
+    <p class="card-text">Gender: ${gender}</p>
+    <p class="card-text">Origin: ${origin}</p>
+    <p class="card-text">Last known location: ${location}</p>
+    <p class="card-text">From dimension: ${dimension}</p>
+  </div>
+</div>`;
 
-    let card = document.createElement("div");
-    card.setAttribute("class", "card");
+    // let displayImage = document.createElement("img");
+    // let displayCharName = document.createElement("h1");
+    // displayCharName.setAttribute("class", "charName");
+    // let displayStatus = document.createElement("h3");
+    // displayStatus.setAttribute("class", "description");
+    // let displaySpecies = document.createElement("h3");
+    // displaySpecies.setAttribute("class", "description");
+    // let displayGender = document.createElement("h3");
+    // displayGender.setAttribute("class", "description");
 
-    let cardImageTop = document.createElement("div");
-    card.setAttribute("class", "card-img-top");
+    // displayImage.src = image;
+    // displayCharName.innerHTML = `Name: ${charName}`;
+    // displayStatus.innerHTML = `Status: ${status}`;
+    // displaySpecies.innerHTML = `Species: ${species}`;
+    // displayGender.innerHTML = `Gender: ${gender}`;
 
-    let cardBody = document.createElement("div");
-    cardBody.setAttribute("class", "cardBody");
+    // let card = document.createElement("div");
+    // card.setAttribute("class", "card");
+
+    // let cardBody = document.createElement("div");
+    // cardBody.setAttribute("class", "cardBody");
 
     // displayCharName.innerHTML = charName;
     // displayStatus.innerHTML = status;
     // displaySpecies.innerHTML = species;
     // displayGender.innerHTML = gender;
 
-    results.appendChild(card);
-    cardImageTop.appendChild(displayImage);
-    card.appendChild(cardBody);
-    cardBody.appendChild(displayCharName);
-    cardBody.appendChild(displayStatus);
-    cardBody.appendChild(displaySpecies);
-    cardBody.appendChild(displayGender);
+    // results.appendChild(card);
+    // card.appendChild(cardBody);
+    // cardBody.appendChild(displayImage);
+    // cardBody.appendChild(displayCharName);
+    // cardBody.appendChild(displayStatus);
+    // cardBody.appendChild(displaySpecies);
+    // cardBody.appendChild(displayGender);
+    // cardBody.appendChild(displayDimension);
 
     console.log(residents);
-
-    // results.appendChild(displayImage);
-    // results.appendChild(displayCharName);
-    // results.appendChild(displayStatus);
-    // results.appendChild(displaySpecies);
-    // results.appendChild(displayGender);
-
-    // console.log(residents [i], i);
   }
 
-  // displayImage.src = image;
-  // displayCharName.innerHTML = charName;
-  // displayStatus.innerHTML = status;
-  // displaySpecies.innerHTML = species;
-  // displayGender.innerHTML = gender;
-
-  // create card
-  // let card = document.createElement("div");
-  // card.setAttribute("class", "card")
-
-  // card body/content
-  // let cardBody = document.createElement('div')
-  // cardBody.setAttribute("class", "cardBody")
-
-  // image in card
-  // let charImage = document.createElement('img')
-  // charImage.src = "your source"
-  // charImage.alt = "image alt"
-  // charImage.style.width = "100%"
-
-  // character name
-  // let charName = document.createElement('h1')
-  // charName.innerHTML = "character name goes here"
-  // charName.style.fontWeight = "600"
-
-  // appending
-
-  // results.appendChild(displayName);
-  // results.appendChild(displayType);
-  // results.appendChild(displayDimension);
-  // results.appendChild(displayImage);
-  // results.appendChild(displayCharName);
-  // results.appendChild(displayStatus);
-  // results.appendChild(displaySpecies);
-  // results.appendChild(displayGender);
-
-  // append card
-  // results.appendChild(card)
-  // card.appendChild(cardBody)
-  // cardBody.appendChild(displayImage);
-  // cardBody.appendChild(displayCharName);
-  // cardBody.appendChild(displayStatus);
-  // cardBody.appendChild(displaySpecies);
-  // cardBody.appendChild(displayGender);
+  // results.appendChild(card);
 }
