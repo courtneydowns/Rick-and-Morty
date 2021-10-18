@@ -1,114 +1,171 @@
 @font-face {
-	font-family: getSchwifty;
-	src: url(./assets/getSchwifty.ttf);
+  font-family: getSchwifty;
+  src: url(./assets/getSchwifty.ttf);
 }
 
 body {
-	background-image: url('./assets/85327.png');
-	background-size: cover;
-	background-position: bottom right;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	padding: 5px;
+  background-image: url("./assets/bluestarrynight2.jpg");
+  max-width: 100%;
+  padding: 0.2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-view {
+  display: none;
+}
+
+h5 {
+  font-family: getSchwifty;
+  color: black;
+  font-size: 2rem;
 }
 
 .container {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  margin-top: 10rem;
+  height: 8rem;
+  justify-content: center;
+  align-items: center;
 }
 
-/* .logo {
-	margin-bottom: 5px;
-} */
-
 #background-image {
-	height: 140px;
-	margin-bottom: 4em;
+  height: 8.75rem;
+  margin-bottom: 4rem;
 }
 
 .drop-down {
-	margin-top: -30px;
+  align-items: center;
+  height: 8vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-label {
-	color: white;
-	font-family: getSchwifty;
-	font-size: 42px;
-}
-
-button {
-	background-color: #b1eaf9;
-	font-family: getSchwifty;
-	color: 
-	#272c3a;
-	height: 50px;
-	font-size: 18px;
-}
-
-option {
-	font-family: getSchwifty;
+.card-img-top {
+  width: 18rem;
 }
 
 #location {
-	font-family: getSchwifty;
-	height: 50px;
-	font-size: 24px;
+  font-family: getSchwifty;
+  height: 3.125rem;
+}
+
+label[for="location"] {
+  color: white;
+  font-family: getSchwifty;
+  font-size: 3.125rem;
+}
+
+button {
+  background-color: #b1eaf9;
+  font-family: getSchwifty;
+  color: #272c3a;
+  height: 3.25rem;
+  font-size: 1.25rem;
+}
+
+option {
+  font-family: getSchwifty;
 }
 
 p {
-	font-family: getSchwifty;
-	height: 50px;
-	font-size: 30px;
-	color: white;
-	padding-top: 60px;
+  font-family: getSchwifty;
+  font-size: 1.25rem;
+  color: black;
 }
 
 h2 {
-	font-family: getSchwifty;
-	color: white;
-	font-size: 30px;
-	margin-top: 50px;
+  font-family: getSchwifty;
+  color: white;
+  font-size: 2.5rem;
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  position: relative;
+  text-align: center;
+}
+
+h4 {
+  font-family: getSchwifty;
+  color: white;
+  margin-bottom: -3.125rem;
+  padding-bottom: 5rem;
+  text-align: center;
+  font-size: 1.875rem;
+  position: relative;
+  margin-top: 4rem;
 }
 
 .charName {
-	font-family: getSchwifty;
-	font-size: 30px;
-	color: black;
-	padding-left: 325px;
-	position: relative;
-	z-index: 100;
-	margin-top: -250px;
-	/* padding-bottom: 500px; */
-	/* margin-top: 100px;
-	font-display: block;  */
-
+  font-family: getSchwifty;
+  font-size: 1.875rem;
+  color: white;
+  padding-left: 20.3125rem;
+  position: relative;
+  z-index: 100;
+  margin-top: -15.625px;
 }
 
-.description {
-	font-family: getSchwifty;
-	color: black;
-	font-size: 22px;
-	position: relative;
-	z-index: 100;
-	padding-left: 325px;
-	/* padding-left: 325px;
-	padding-bottom: 200px; */
+.logo {
+  top: 0;
+  right: 0;
+  position: absolute;
+  padding-top: 1.25rem;
+  padding-right: 1.875rem;
 }
 
 .card {
-	
-	background-color: white; 
-	width: 700px;
-	height: 300px;
-	margin-top: 45px;
-	margin-bottom: 75px;
-	justify-content: left;
-
+  margin-bottom: 3.125rem;
 }
 
-/* .h1 {
-	color: white;
-	padding-top: 200px;
-} */
+/* for mobile */
+@media screen and (max-width: 545px) {
+  body {
+    padding: 0;
+  }
+
+  .desktop-view {
+    display: none;
+  }
+
+  .mobile-view {
+    display: block;
+  }
+
+  .rick-and-morty-logo {
+    max-width: 100vw;
+    margin-bottom: 2.5rem;
+  }
+
+  .instructions {
+    margin: 0;
+    margin-bottom: 2rem;
+    padding: 0;
+  }
+
+  .drop-down-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  #location {
+    width: 66vw;
+    margin-bottom: 2rem;
+  }
+
+  #results h2,
+  #results h4 {
+    margin: 0;
+    margin-bottom: 2rem;
+    padding: 0;
+  }
+
+  #results .card {
+    max-width: 90vw !important;
+  }
+}
