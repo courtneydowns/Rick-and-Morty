@@ -150,7 +150,6 @@ async function displayResults(arrayBucket = 0) {
     <p class="card-text">Gender: ${gender}</p>
     <p class="card-text">Origin: ${origin}</p>
     <p class="card-text">Last known location: ${location}</p>
-    <p class="card-text">From dimension: ${dimension}</p>
   </div>
 </div>`;
 
