@@ -1,0 +1,48 @@
+@font-face {
+  font-family: getSchwifty;
+  src: url(./assets/getSchwifty.ttf);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: url('./assets/GalaxyWallpaper2.jpg') repeat center / cover;
+  color: white;
+  font-family: getSchwifty;
+  text-align: center;
+}
+
+#rick-and-morty-logo {
+  display: block;
+  margin: auto;
+  max-width: 95vw;
+}
+
+#instructions {
+  margin-top: 0;
+  padding: 16px;
+}
+
+#select-submit-container {
+  display: flex;
+  justify-content: center;
+  height: 64px;
+}
+
+#select-submit-container select {
+  margin-right: 8px;
+  width: 66%;
+}
+
+.resident-card {
+  margin: auto;
+  margin-bottom: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  max-width: 400px;
+  background-color: white;
+  color: black;
+}
