@@ -4,7 +4,7 @@
 }
 
 body {
-  background-image: url("./assets/GalaxyWallpaper2.jpg");
+  background-image: url("./assets/bluestarrynight2.jpg");
   max-width: 100%;
   padding: 0.2rem;
 }
@@ -120,7 +120,7 @@ h4 {
 }
 
 /* for mobile */
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 545px) {
   body {
     padding: 0;
   }
@@ -138,7 +138,7 @@ h4 {
     margin-bottom: 2.5rem;
   }
 
-  .intstructions {
+  .instructions {
     margin: 0;
     margin-bottom: 2rem;
     padding: 0;

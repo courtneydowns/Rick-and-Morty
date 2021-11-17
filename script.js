@@ -1,4 +1,3 @@
-//
 let fetchResults = [];
 
 fetch("https://rickandmortyapi.com/api/location")
@@ -116,7 +115,6 @@ async function displayResults(arrayBucket = 0) {
   let name = fetchResults[arrayBucket].name;
   let type = fetchResults[arrayBucket].type;
   let dimension = fetchResults[arrayBucket].dimension;
-
   let displayName = document.createElement("h2");
   let displayType = document.createElement("h2");
   let displayDimension = document.createElement("h2");
@@ -144,6 +142,7 @@ async function displayResults(arrayBucket = 0) {
     let gender = resultImageFetch.gender;
     let origin = resultImageFetch.origin.name;
     let location = resultImageFetch.location.name;
+    let dimension = resultImageFetch.dimension;
 
     const card = document.createElement("div");
 
@@ -159,6 +158,44 @@ async function displayResults(arrayBucket = 0) {
   </div>
 </div>`;
 
-    results.appendChild(card);
+    // let displayImage = document.createElement("img");
+    // let displayCharName = document.createElement("h1");
+    // displayCharName.setAttribute("class", "charName");
+    // let displayStatus = document.createElement("h3");
+    // displayStatus.setAttribute("class", "description");
+    // let displaySpecies = document.createElement("h3");
+    // displaySpecies.setAttribute("class", "description");
+    // let displayGender = document.createElement("h3");
+    // displayGender.setAttribute("class", "description");
+
+    // displayImage.src = image;
+    // displayCharName.innerHTML = `Name: ${charName}`;
+    // displayStatus.innerHTML = `Status: ${status}`;
+    // displaySpecies.innerHTML = `Species: ${species}`;
+    // displayGender.innerHTML = `Gender: ${gender}`;
+
+    // let card = document.createElement("div");
+    // card.setAttribute("class", "card");
+
+    // let cardBody = document.createElement("div");
+    // cardBody.setAttribute("class", "cardBody");
+
+    // displayCharName.innerHTML = charName;
+    // displayStatus.innerHTML = status;
+    // displaySpecies.innerHTML = species;
+    // displayGender.innerHTML = gender;
+
+    // results.appendChild(card);
+    // card.appendChild(cardBody);
+    // cardBody.appendChild(displayImage);
+    // cardBody.appendChild(displayCharName);
+    // cardBody.appendChild(displayStatus);
+    // cardBody.appendChild(displaySpecies);
+    // cardBody.appendChild(displayGender);
+    // cardBody.appendChild(displayDimension);
+
+    console.log(residents);
   }
+
+  // results.appendChild(card);
 }
