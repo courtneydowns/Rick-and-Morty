@@ -1,18 +1,42 @@
-let fetchResults = [];
+const locationSelector = document.getElementById("location-selector");
+const submitBtn = document.getElementById("submit-btn");
 
-fetch("https://rickandmortyapi.com/api/location")
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (location) {
-    fetchResults = location.results;
-    displayResults();
-  });
+const resultsContainer = document.getElementById("results-container");
 
-let submit = document.getElementById("submit");
-submit.addEventListener("click", () => {
-  let option = document.getElementById("location").value;
-  switch (option) {
+let results = [];
+
+function displayResults(resultsIndex = 0) {
+  const { name, type, dimension, residents } = results[resultsIndex];
+
+  resultsContainer.innerHTML = `
+    <h3>Name: ${name}</h3>
+    <h3>Type: ${type}</h3>
+    <h3>Dimension: ${dimension}</h3>
+    <br />
+    <h3>Residents: </h3>
+  `;
+
+  for (const resident of residents) {
+    fetch(resident)
+      .then((resp) => resp.json())
+      .then((resident) => {
+        resultsContainer.innerHTML += `
+        <div class="resident-card">
+          <img src="${resident.image}" />
+          <h5>${resident.name}</h5>
+          <p>Status: ${resident.status}</p>
+          <p>Species: ${resident.species}</p>
+          <p>Gender: ${resident.gender}</p>
+          <p>Origin: ${resident.origin.name}</p>
+          <p>Location: ${resident.location.name}</p>
+        </div>
+        `;
+      });
+  }
+}
+
+submitBtn.onclick = () => {
+  switch (locationSelector.value) {
     case "location-one":
       displayResults(0);
       break;
@@ -97,100 +121,12 @@ submit.addEventListener("click", () => {
       console.log("oops, broh");
       break;
   }
-});
+};
 
-async function displayResults(arrayBucket = 0) {
-  let results = document.getElementById("results");
-
-  while (results.firstChild) {
-    results.removeChild(results.firstChild);
-  }
-
-  let residents = fetchResults[arrayBucket].residents;
-  let name = fetchResults[arrayBucket].name;
-  let type = fetchResults[arrayBucket].type;
-  let dimension = fetchResults[arrayBucket].dimension;
-  let displayName = document.createElement("h2");
-  let displayType = document.createElement("h2");
-  let displayDimension = document.createElement("h2");
-
-  displayName.innerHTML = `Name: ${name}`;
-  displayType.innerHTML = `Type: ${type}`;
-  displayDimension.innerHTML = `Dimension: ${dimension}`;
-
-  results.appendChild(displayName);
-  results.appendChild(displayType);
-  results.appendChild(displayDimension);
-
-  let residentsHeader = document.createElement("h4");
-  residentsHeader.innerHTML = "Residents:";
-  results.appendChild(residentsHeader);
-
-  for (let i = 0; i < residents.length; i++) {
-    let imageFetch = await fetch(residents[i]);
-    let resultImageFetch = await imageFetch.json();
-
-    let image = resultImageFetch.image;
-    let charName = resultImageFetch.name;
-    let status = resultImageFetch.status;
-    let species = resultImageFetch.species;
-    let gender = resultImageFetch.gender;
-    let origin = resultImageFetch.origin.name;
-    let location = resultImageFetch.location.name;
-    let dimension = resultImageFetch.dimension;
-
-    const card = document.createElement("div");
-
-    card.innerHTML = `<div class="card mx-auto text-center" style="width: 30rem;">
-  <img src="${image}" class="card-img-top" alt="${charName}">
-  <div class="card-body">
-    <h5 class="card-title"${charName}></h5>
-    <p class="card-text">Status: ${status}</p>
-    <p class="card-text">Species: ${species}</p>
-    <p class="card-text">Gender: ${gender}</p>
-    <p class="card-text">Origin: ${origin}</p>
-    <p class="card-text">Last known location: ${location}</p>
-  </div>
-</div>`;
-
-    // let displayImage = document.createElement("img");
-    // let displayCharName = document.createElement("h1");
-    // displayCharName.setAttribute("class", "charName");
-    // let displayStatus = document.createElement("h3");
-    // displayStatus.setAttribute("class", "description");
-    // let displaySpecies = document.createElement("h3");
-    // displaySpecies.setAttribute("class", "description");
-    // let displayGender = document.createElement("h3");
-    // displayGender.setAttribute("class", "description");
-
-    // displayImage.src = image;
-    // displayCharName.innerHTML = `Name: ${charName}`;
-    // displayStatus.innerHTML = `Status: ${status}`;
-    // displaySpecies.innerHTML = `Species: ${species}`;
-    // displayGender.innerHTML = `Gender: ${gender}`;
-
-    // let card = document.createElement("div");
-    // card.setAttribute("class", "card");
-
-    // let cardBody = document.createElement("div");
-    // cardBody.setAttribute("class", "cardBody");
-
-    // displayCharName.innerHTML = charName;
-    // displayStatus.innerHTML = status;
-    // displaySpecies.innerHTML = species;
-    // displayGender.innerHTML = gender;
-
-    // results.appendChild(card);
-    // card.appendChild(cardBody);
-    // cardBody.appendChild(displayImage);
-    // cardBody.appendChild(displayCharName);
-    // cardBody.appendChild(displayStatus);
-    // cardBody.appendChild(displaySpecies);
-    // cardBody.appendChild(displayGender);
-    // cardBody.appendChild(displayDimension);
-
-    console.log(residents);
-  }
-
-  // results.appendChild(card);
-}
+// initialize
+fetch("https://rickandmortyapi.com/api/location")
+  .then((resp) => resp.json())
+  .then((jsonData) => {
+    results = jsonData.results;
+    displayResults();
+  });
